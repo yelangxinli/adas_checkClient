@@ -314,13 +314,26 @@ namespace ADASLeader产品生产测试
                     {
                         if (commBuf[0x07] == 1)    //CAN SENSOR 不正常
                         {
+                            this.Invoke((EventHandler)(delegate
+                            {
+                                textBox1.Font = new Font(textBox1.Font.FontFamily, 100, textBox1.Font.Style);
+                                textBox1.ForeColor = Color.Red;
+                                textBox1.Text = "NO";
+                            }));
                             this.Invoke((EventHandler)(delegate { checkBox5.Checked = false; checkBox6.Checked = true; }));
-                            this.Invoke((EventHandler)(delegate { textBox1.Text += "\r\n" + DateTime.Now.ToLocalTime().ToString() + " : CAN SENSOR 不正常\r\n"; }));
+                            //this.Invoke((EventHandler)(delegate { textBox1.Text += "\r\n" + DateTime.Now.ToLocalTime().ToString() + " : CAN SENSOR 不正常\r\n"; }));
                         }
                         else     //CAN SENSOR 正常
                         {
+                      
+                            this.Invoke((EventHandler)(delegate
+                            {
+                                textBox1.Font = new Font(textBox1.Font.FontFamily, 100, textBox1.Font.Style);
+                                textBox1.ForeColor = Color.Green;
+                                textBox1.Text = "PASS";
+                            }));
                             this.Invoke((EventHandler)(delegate { checkBox5.Checked = true; checkBox6.Checked = false; }));
-                            this.Invoke((EventHandler)(delegate { textBox1.Text += "\r\n" + DateTime.Now.ToLocalTime().ToString() + " : CAN SENSOR 正常\r\n"; }));
+                            //this.Invoke((EventHandler)(delegate { textBox1.Text += "\r\n" + DateTime.Now.ToLocalTime().ToString() + " : CAN SENSOR 正常\r\n"; }));
                         }
                         //保存结果
                         saveTestResault();

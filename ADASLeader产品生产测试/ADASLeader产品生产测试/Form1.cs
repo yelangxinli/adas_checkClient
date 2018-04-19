@@ -171,5 +171,10 @@ namespace ADASLeader产品生产测试
         {
             e.KeyChar = (char)Keys.None;
         }
+
+        private void textBox_OP_CODE_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

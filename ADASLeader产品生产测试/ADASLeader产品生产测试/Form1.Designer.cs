@@ -68,6 +68,7 @@
             this.textBox_OP_CODE.Size = new System.Drawing.Size(560, 102);
             this.textBox_OP_CODE.TabIndex = 7;
             this.textBox_OP_CODE.Text = "输入口令";
+            this.textBox_OP_CODE.TextChanged += new System.EventHandler(this.textBox_OP_CODE_TextChanged);
             this.textBox_OP_CODE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_OP_CODE_KeyPress);
             // 
             // timer1

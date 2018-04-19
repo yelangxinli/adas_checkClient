@@ -104,7 +104,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 19);
             this.label10.TabIndex = 10;
-            this.label10.Text = "1.8V";
+            this.label10.Text = "1.5V";
             // 
             // textBox_3_3V
             // 

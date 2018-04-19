@@ -715,7 +715,7 @@ namespace ADASLeader产品生产测试
             TimerArry[(int)timeF.lookforwifi] = 12;
             while (TimerArry[(int)timeF.lookforwifi] > 0)
             {
-                this.Invoke((EventHandler)(delegate { btn_search_wifi.Enabled = false; }));
+                this.Invoke((EventHandler)(delegate { btn_search_wifi.Enabled = false; btn_connect.Enabled = false; button1.Enabled = false; button2.Enabled = false; button3.Enabled = false; }));
                 if (look_for_wifi_returnF == 1)
                 {
                     int c = 0; ; int rssi = 0; string name = null; string is_tested = null; ; string is_test_pass = null;
@@ -908,7 +908,7 @@ namespace ADASLeader产品生产测试
                 if (WIFITest_RUN == 1)
                 {
                     this.Invoke((EventHandler)(delegate
-                    { btn_connect.Enabled = false; }));
+                    { btn_connect.Enabled = false; btn_search_wifi.Enabled = false; }));
                     int i = 0;
                     ListViewItem item = new ListViewItem(); int flag = 0;
                     for (i = 0; i < ADASLeader_device.Count; i++)
@@ -1000,6 +1000,7 @@ namespace ADASLeader产品生产测试
                                     button1.Enabled = true;
                                     button2.Enabled = true;
                                     button3.Enabled = true;
+                                    btn_search_wifi.Enabled = true;
                                 }));
                                 //this.Invoke((EventHandler)(delegate { btn_self_test.Text = "开始WIFI测试"; }));
                                 break;

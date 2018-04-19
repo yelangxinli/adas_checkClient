@@ -60,7 +60,7 @@ namespace ADASLeader产品生产测试
             work_current = 3,
             static_current = 4,
             _5V = 5,
-            _1_8V = 6,
+            _1_5V = 6,
             _3_3V = 7,
             _1_1V = 8
         }
@@ -248,7 +248,7 @@ namespace ADASLeader产品生产测试
             tlv_reply_min.Voltage0 = (UInt16)(330 * 0.95);    //
             tlv_reply_min.Voltage1 = 0;    //
             tlv_reply_min.Voltage2 = (UInt16)(500 * 0.95);    //
-            tlv_reply_min.Voltage3 = (UInt16)(180 * 0.95);    //
+            tlv_reply_min.Voltage3 = (UInt16)(150 * 0.95);    //
             tlv_reply_min.Voltage4 = 0;    //
             tlv_reply_min.Voltage5 = 0;    //
             tlv_reply_min.Voltage6 = 0;    //
@@ -547,7 +547,7 @@ namespace ADASLeader产品生产测试
                 ws.Cells[blankRow, (int)column._5V] = tlv_reply.Voltage2.ToString();
                 ws.Cells[blankRow, (int)column._1_1V] = tlv_reply.Voltage7.ToString();
                 ws.Cells[blankRow, (int)column._3_3V] = tlv_reply.Voltage0.ToString();
-                ws.Cells[blankRow, (int)column._1_8V] = tlv_reply.Voltage3.ToString();
+                ws.Cells[blankRow, (int)column._1_5V] = tlv_reply.Voltage3.ToString();
                 if (Test_Resault._5V_OK_NOT == 1)
                 {
                     ran = (Microsoft.Office.Interop.Excel.Range)ws.Cells[blankRow, (int)column._5V];
@@ -583,12 +583,12 @@ namespace ADASLeader产品生产测试
 
                 if (Test_Resault._1_8_OK_NOT == 1)
                 {
-                    ran = (Microsoft.Office.Interop.Excel.Range)ws.Cells[blankRow, (int)column._1_8V];
+                    ran = (Microsoft.Office.Interop.Excel.Range)ws.Cells[blankRow, (int)column._1_5V];
                     ran.Interior.Color = Color.Green;
                 }
                 else
                 {
-                    ran = (Microsoft.Office.Interop.Excel.Range)ws.Cells[blankRow, (int)column._1_8V];
+                    ran = (Microsoft.Office.Interop.Excel.Range)ws.Cells[blankRow, (int)column._1_5V];
                     ran.Interior.Color = Color.Red;
                 }
 

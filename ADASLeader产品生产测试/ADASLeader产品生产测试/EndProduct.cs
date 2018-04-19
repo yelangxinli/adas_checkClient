@@ -347,7 +347,7 @@ namespace ADASLeader产品生产测试
                 {
                     wbs = xApp.Workbooks;
                     wb = wbs.Add(Cdirectory + "\\" + saveFileName + ".xlsx");
-                    ws = wb.Worksheets["saveFileName"];
+                    ws = wb.Worksheets[saveFileName];
                 }
                 else
                 {
@@ -606,6 +606,9 @@ namespace ADASLeader产品生产测试
             saveTestResault();
             button6.Enabled = false;
             test_resault.TEST_FINISHED = 0;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
 
         private void EndProduct_FormClosing(object sender, FormClosingEventArgs e)
@@ -625,7 +628,8 @@ namespace ADASLeader产品生产测试
             if (comm != null)
                 if (comm.IsOpen)
                     comm.Close();
-
+            if (commWifiTest.IsOpen)
+                commWifiTest.Close();
 
             Process[] localAll = Process.GetProcesses();
             foreach (Process A in localAll)

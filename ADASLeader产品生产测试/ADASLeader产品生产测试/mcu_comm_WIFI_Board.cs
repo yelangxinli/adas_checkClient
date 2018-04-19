@@ -967,7 +967,7 @@ namespace ADASLeader产品生产测试
                 MessageBox.Show("启动应用程序时出错！原因：" + e0.Message);
             }
             this.Invoke((EventHandler)(delegate{ btn_write_bin.Enabled = false; }));
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
             //sendCMD(MSG_TYPE_CMD_TEST_WIFI_CODE_WRITE_FS_REQ, 0x00);   //reset wifi
             UInt32 ImageProgramming_RUN_FLAG = 0;
             Process[] localAll = Process.GetProcesses();//ImageProgramming
@@ -992,6 +992,8 @@ namespace ADASLeader产品生产测试
                 }
                 if (i == 5)
                     return;
+                else
+                    Thread.Sleep(1000);
             }
 
             ImageProgramming_RUN_FLAG = 1;
